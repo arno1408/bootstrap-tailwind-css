@@ -13,22 +13,62 @@
   </head>
   <body
     style="height: 100vh"
-    class="container-fluid d-flex justify-content-center align-items-center"
+    class="container-fluid d-flex justify-content-center align-items-center overflow-hidden"
   >
-    <div class="d-flex gap-3">
-      <div style="background: url('https://picsum.photos/200')">
+    <div class="d-flex gap-3 h-75 w-95">
+      <div
+        class="d-flex align-items-end text-warning p-2 rounded panel"
+        role="button"
+        style="
+          flex: 1;
+          background: url('https://picsum.photos/600') no-repeat center/cover;
+          transition: all 0.5s ease-in;
+        "
+      >
         <h3>Explore The World</h3>
       </div>
-      <div style="background: url('https://picsum.photos/200')">
+      <div
+        class="d-flex align-items-end text-warning p-2 rounded panel"
+        role="button"
+        style="
+          flex: 1;
+          background: url('https://picsum.photos/600') no-repeat center/cover;
+          transition: all 0.5s ease-in;
+        "
+      >
         <h3>Wild Forest</h3>
       </div>
-      <div style="background: url('https://picsum.photos/200')">
+      <div
+        class="d-flex align-items-end text-warning p-2 rounded panel"
+        role="button"
+        style="
+          flex: 1;
+          background: url('https://picsum.photos/600') no-repeat center/cover;
+          transition: all 0.5s ease-in;
+        "
+      >
         <h3>Sunny Beach</h3>
       </div>
-      <div style="background: url('https://picsum.photos/200')">
+      <div
+        class="d-flex align-items-end text-warning p-2 rounded panel d-none d-md-flex"
+        role="button"
+        style="
+          flex: 1;
+          background: url('https://picsum.photos/600') no-repeat center/cover;
+          transition: all 0.5s ease-in;
+        "
+      >
         <h3>City on Winter</h3>
       </div>
-      <div style="background: url('https://picsum.photos/200')">
+      <div
+        class="d-flex align-items-end text-warning p-2 rounded panel d-none d-md-flex"
+        role="button"
+        style="
+          flex: 1;
+          background: url('https://picsum.photos/600') no-repeat center/cover;
+          transition: all 0.5s ease-in;
+        "
+      >
         <h3>Mountains - Clouds</h3>
       </div>
     </div>
@@ -37,6 +77,18 @@
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous"
     ></script>
-    <script src="script.js"></script>
+    <script>
+      let panels = document.querySelectorAll(".panel");
+
+      panels.forEach((panel) => {
+        panel.addEventListener("click", () => {
+          panels.forEach((p) => {
+            p.style.flexGrow = "1";
+          });
+
+          panel.style.flexGrow = "5";
+        });
+      });
+    </script>
   </body>
 </html>
